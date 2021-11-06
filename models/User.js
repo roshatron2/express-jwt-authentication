@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema({
     minlength: [6, "Password should be atleast minimum of 6 characters"],
     maxlength: [12, "Password should be maximum of 12 characters"],
   },
-
+  files: [{ type: mongoose.Schema.ObjectId, ref: "File" }],
   createdAt: {
     type: Date,
     default: Date.now,
@@ -42,7 +42,7 @@ UserSchema.pre("save", async function (next) {
 
 UserSchema.methods.getJwtToken = function () {
   let accessToken = jwt.sign({ id: this._id }, process.env.ACCESS_TOKEN_SECRET, {
-    expiresIn: "60s",
+    expiresIn: "1d",
   });
   let refreshToken = jwt.sign({ id: this._id }, process.env.REFRESH_TOKEN_SECRET);
   return { accessToken, refreshToken };
