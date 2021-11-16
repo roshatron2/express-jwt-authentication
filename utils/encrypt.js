@@ -24,6 +24,17 @@ exports.encrypt = (directory, filename) => {
   });
 };
 
+exports.decrypt = (directory, filename) => {
+  var key = "14189dc35ae35e75ff31d7502e245cd9bc7803838fbfd5c773cdcd79b8a28bbd";
+  var cipher = crypto.createDecipher("aes-256-cbc", key);
+  var input = fs.createReadStream(`${directory}/${filename}`);
+  var output = fs.createWriteStream(`${directory}/${filename}.enc`);
+  input.pipe(cipher).pipe(output);
+  output.on("finish", function () {
+    console.log("Decrypted file written to disk!");
+  });
+};
+
 exports.deleteFile = (directory, filename) => {
   fs.unlinkSync(`${directory}/${filename}`);
 };

@@ -8,5 +8,9 @@ const fileSchema = new mongoose.Schema({
   name: {
     type: String,
   },
+  path: {
+    type: String,
+    required: true,
+  },
 });
 module.exports = mongoose.model("Files", fileSchema);
