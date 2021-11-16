@@ -9,7 +9,6 @@ const multerStorage = multer.diskStorage({
   },
 });
 
-// const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
   if (file.mimetype == "text/plain") {
