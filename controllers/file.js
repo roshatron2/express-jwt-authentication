@@ -8,7 +8,6 @@ exports.uploadFile = asyncHandler(async (req, res, next) => {
   const { name } = req.body;
   let { path, filename } = req.file;
   path += ".enc";
-  console.log(req.file);
 
   let file = await File.create({ name, path });
   if (!file) {

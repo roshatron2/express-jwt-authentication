@@ -86,4 +86,4 @@ function generateAccessToken(user) {
   return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "35s" });
 }
 
-app.listen(4000, console.log("Authentication Server started at Port 4000"));
+app.listen(process.env.AUTH_SERVER_PORT, console.log("Authentication Server started at Port 4000"));

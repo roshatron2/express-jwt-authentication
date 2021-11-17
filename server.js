@@ -17,4 +17,4 @@ app.use(errorHandler);
 
 app.get("/", (req, res) => res.send("Server is UP"));
 
-app.listen(3000, console.log("Content Server Started at Port 3000"));
+app.listen(process.env.CONTENT_SERVER_PORT, console.log("Content Server Started at Port 3000"));

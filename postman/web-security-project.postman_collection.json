@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "925a9dde-1e79-437e-b0b3-aaf1b8399b5d",
+		"name": "web-security-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "roshanjohn1460@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODZiZDI3MDQ3ZDg3OTFjMzI3ZDVmMCIsImlhdCI6MTYzNzA1MjQwNSwiZXhwIjoxNjM3MTM4ODA1fQ.ewBOYYCC04bI8tEoj08mMXkeZ7NGnCBDf3BtQ3uR4l8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get new Acess Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "refreshToken",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODZiZDI3MDQ3ZDg3OTFjMzI3ZDVmMCIsImlhdCI6MTYzNzEzMTMzN30.Wl8dOpWkYRMn-88qrn-qyq-fVQQkXNzz1Y4v9ZJ1tiE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODZiZDI3MDQ3ZDg3OTFjMzI3ZDVmMCIsImlhdCI6MTYzNzEzMTI4Mn0.KyLloGUph7WzHKTqjZ2TXjPhK4pxUZS15BoT7gVaJLk",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "roshanjohn1460@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"description": "`",
+							"type": "text"
+						},
+						{
+							"key": "fullname",
+							"value": "Roshan John",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "roshatron",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show files",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODZiZDI3MDQ3ZDg3OTFjMzI3ZDVmMCIsImlhdCI6MTYzNzA1MjQwNSwiZXhwIjoxNjM3MTM4ODA1fQ.ewBOYYCC04bI8tEoj08mMXkeZ7NGnCBDf3BtQ3uR4l8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/file/show",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"file",
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload files",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODZiZDI3MDQ3ZDg3OTFjMzI3ZDVmMCIsImlhdCI6MTYzNzA1MjQwNSwiZXhwIjoxNjM3MTM4ODA1fQ.ewBOYYCC04bI8tEoj08mMXkeZ7NGnCBDf3BtQ3uR4l8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "myFile",
+							"type": "file",
+							"src": "/D:/Projects/Web/practice/file.txt"
+						},
+						{
+							"key": "name",
+							"value": "File Name",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/file/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"file",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get File",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODZiZDI3MDQ3ZDg3OTFjMzI3ZDVmMCIsImlhdCI6MTYzNzA1MjQwNSwiZXhwIjoxNjM3MTM4ODA1fQ.ewBOYYCC04bI8tEoj08mMXkeZ7NGnCBDf3BtQ3uR4l8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/file/download/6193e3dc793253082e4f3d12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"file",
+						"download",
+						"6193e3dc793253082e4f3d12"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
